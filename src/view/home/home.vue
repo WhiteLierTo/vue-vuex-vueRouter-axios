@@ -34,9 +34,9 @@ export default {
     }
   },
   methods: {
-    regHandleClick(){
-      console.log('接收');
-      this.reg++
+    regHandleClick() {
+      console.log("接收");
+      this.reg++;
     }
   },
   mounted() {
