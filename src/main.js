@@ -4,21 +4,23 @@ import VueRouter from 'vue-router'
 import createRouter from './router/router'
 import store from './store/store'
 import Axios from 'axios'
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+// 工具类
+import Util from '../src/common/util'
 
-Vue.use(VueRouter);
-Vue.use(ElementUI, { size: 'small', zIndex: 3000 });
+Vue.use(VueRouter)
+Vue.use(ElementUI, { size: 'small', zIndex: 3000 })
+Vue.prototype.$util = Util
 
-const router = createRouter();
+const router = createRouter()
 // const store = createStore();
 
-Vue.config.productionTip = false;
-Axios.defaults.withCredentials = true;
+Vue.config.productionTip = false
+Axios.defaults.withCredentials = true
 
-
-//vue 统一处理token失效问题
-/*Axios.interceptors.response.use(response => {
+// vue 统一处理token失效问题
+/* Axios.interceptors.response.use(response => {
     if (response) {
         switch (response.data.code) {
             case 403: //与后台约定登录失效的返回码,根据实际情况处理
@@ -40,15 +42,13 @@ Axios.defaults.withCredentials = true;
     return response;
 }, error => {
     return Promise.reject(error.response.data) //返回接口返回的错误信息
-})*/
-
-
+}) */
 
 /* eslint-disable no-new */
 new Vue({
-    el: '#app',
-    router,
-    store,
-    components: { App },
-    template: '<App/>'
+  el: '#app',
+  router,
+  store,
+  components: { App },
+  template: '<App/>'
 })

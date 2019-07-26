@@ -12,10 +12,10 @@
 </template>
 
 <script>
-import Header from "@/components/header/header";
-import Main from "@/components/main/main";
-import { getRoleList } from "../../model/home/home";
-import A from "./a";
+import Header from '@/components/header/header'
+import Main from '@/components/main/main'
+import { getRoleList } from '../../model/home/home'
+import A from './a'
 
 export default {
   components: {
@@ -23,24 +23,29 @@ export default {
     Main,
     A
   },
-  data() {
+  data () {
     return {
-      reg: 1
-    };
+      reg: 1,
+      type: true,
+      ac: null
+    }
   },
   computed: {
-    goodsList() {
-      return this.$store.state.home.goodsList;
+    goodsList () {
+      return this.$store.state.home.goodsList
     }
   },
   methods: {
-    regHandleClick() {
-      console.log("接收");
-      this.reg++;
+    regHandleClick () {
+      console.log('接收')
+      this.reg++
     }
   },
-  mounted() {
-    getRoleList();
+  mounted () {
+    getRoleList()
+    // alert('类型:' + this.$util.type.isString(this.type))
+    alert('真假:' + this.$util.tureOrfalse.isFalse(this.ac))
+    this.$util.verificationFnc.isCardID('321023199513040810')
   }
-};
+}
 </script>

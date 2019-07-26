@@ -8,9 +8,9 @@
 
 <script>
 export default {
-  props: ["reg"],
-  data() {
-    return {};
+  props: ['reg'],
+  data () {
+    return {}
   }
-};
+}
 </script>

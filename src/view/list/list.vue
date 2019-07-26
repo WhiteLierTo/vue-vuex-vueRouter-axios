@@ -7,47 +7,48 @@
 </template>
 
 <script>
-import { mapState, mapGetters, mapMutations, mapActions } from "vuex";
+import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
 export default {
-  data() {
-    return {};
+  data () {
+    return {
+
+    }
   },
   methods: {
-    ...mapMutations(["updateCount"]),
-    ...mapActions(["updateCountAsync"])
+    ...mapMutations(['updateCount']),
+    ...mapActions(['updateCountAsync'])
   },
   computed: {
-    ...mapState(["count"]),
-    /*count() {
+    ...mapState(['count']),
+    /* count() {
       return this.$store.state.count;
-    },*/
+    }, */
     /* fullName() {
       return this.$store.getters.fullName;
-    }*/
-    ...mapGetters(["fullName"])
+    } */
+    ...mapGetters(['fullName'])
   },
-  mounted() {
-    let i = 1;
-    /*setInterval(() => {
+  mounted () {
+    let i = 1
+    /* setInterval(() => {
       this.$store.commit("updateCount", i++);
-    }, 1000);*/
+    }, 1000); */
     // 辅助函数转变
     setInterval(() => {
       this.updateCount({
         num: i++
-      });
-    }, 1000);
+      })
+    }, 1000)
 
-    /*this.updateCountAsync({
+    /* this.updateCountAsync({
       num: 5,
       time: 2000
-    });*/
+    }); */
     // 辅助函数转变
-    /*this.$store.dispatch("updateCountAsync", {
+    /* this.$store.dispatch("updateCountAsync", {
       num: 5,
       time: 2000
-    });*/
+    }); */
   }
-};
+}
 </script>
-
